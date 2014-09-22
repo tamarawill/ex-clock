@@ -7,14 +7,14 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 <head>
 	<title>PHP Clock</title>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css" />
+	<?php require('controller.php'); ?>
 </head>
-<body>
-	<p>The current time is 
-		<?php 
-			date_default_timezone_set('America/New_York');
-			echo date('g:i a');
-		?>
-	</p>
-	<p>Blah blah blah</p>
-</body>
+<body class="<?=$colorname ?>">
+	<h1>It's <?=$prettydate ?></h1>
+	<p>Time zone: <?=$timezone ?></p>
+	<div class="image">
+	<img src = "http://making-the-internet.s3.amazonaws.com/<?=$picpath ?>" />
+	</div>
+	</body>
 </html>
